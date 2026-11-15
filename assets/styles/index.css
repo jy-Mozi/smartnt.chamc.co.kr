@@ -1,0 +1,17 @@
+/* StyleSheet */
+@import '/assets/styles/fonts.css';
+@import '/assets/styles/reset.css';
+@import '/assets/styles/vars.css';
+@import '/assets/styles/common.css';
+@import '/assets/styles/layouts.css';
+@import '/assets/styles/pages.css';
+@import '/assets/styles/components/form.css';
+@import '/assets/styles/components/ui.css';
+@import '/assets/styles/components/layout.css';
+@import '/assets/styles/components/table.css';
+
+/* Library */
+@import '/assets/lib/boxicons/boxicons.min.css';
+@import '/assets/lib/vanillajs-datepicker/datepicker.min.css';
+@import '/assets/lib/fullcalendar/fullcalendar.css';
+@import '/assets/lib/select2/select2.min.css';

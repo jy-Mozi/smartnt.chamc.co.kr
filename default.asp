@@ -1,0 +1,3 @@
+<%
+	Response.redirect("/pages/login/")
+%>

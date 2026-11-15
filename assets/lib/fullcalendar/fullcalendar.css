@@ -1,0 +1,163 @@
+.fc .fc-header-toolbar.fc-toolbar {
+  margin-bottom: 20px;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.fc .fc-myCustomButton-button {
+  font-size: 16px;
+  font-weight: 700;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-gray-01);
+}
+
+.fc .fc-daygrid-day-top {
+  flex-direction: row;
+}
+
+.fc .fc-scrollgrid-section-footer > *,
+.fc .fc-scrollgrid-section-header > * {
+  border: 0;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: 0;
+}
+
+.fc .fc-scrollgrid-section-liquid > td {
+  border-right: 0;
+}
+
+.fc .fc-col-header-cell {
+  padding: 12px;
+  background-color: #e7e7e7;
+  border: 0;
+  border-inline: 1px solid var(--color-white);
+}
+
+.fc .fc-col-header-cell-cushion {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fc .fc-daygrid-day-number {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.fc-theme-standard td.fc-day,
+.fc-theme-standard th.fc-day {
+  padding: 15px 5px;
+  border-right: 1px solid var(--color-white);
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(214, 248, 255, 0.5);
+}
+
+.fc-theme-standard td.fc-day-sun {
+  color: var(--color-red);
+}
+
+.fc-daygrid-event-harness {
+  text-align: center;
+}
+
+.fc-h-event {
+  background-color: transparent;
+  border: none;
+  color: var(--color-gray-01);
+}
+
+.fc-h-event .fc-event-main {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-gray-01);
+}
+
+.fc-daygrid-event-dot {
+  display: none;
+}
+
+.fc-daygrid-dot-event .fc-event-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.fc-h-event.event-weekly-holiday .fc-event-title,
+.fc-h-event.event-holiday .fc-event-title,
+.fc-h-event.event-annual .fc-event-title {
+  color: var(--color-red);
+}
+
+.fc-event.event-extended .fc-event-title {
+  color: var(--color-primary-text);
+}
+
+.fc-event.event-annual-approval,
+.fc-event.event-annual-rejection {
+  color: transparent;
+}
+
+.fc-event.event-annual-approval:before,
+.fc-event.event-annual-rejection:before {
+  font-family: 'boxicons' !important;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  display: inline-block;
+  text-transform: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  z-index: 20;
+  top: calc(50% - 8px);
+  right: 50%;
+  transform: translateX(10px);
+}
+
+.fc-event.event-annual-approval:before {
+  content: '\ed31';
+  color: var(--color-primary-text);
+}
+
+.fc-event.event-annual-rejection:before {
+  content: '\ef06';
+  color: var(--color-red);
+}
+
+.fullcalendar.small-calendar.fc .fc-button-primary {
+  background-color: var(--color-primary-main);
+  border-color: var(--color-primary-main);
+  border-radius: 50%;
+  font-size: 0.5em;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullcalendar.small-calendar.fc .fc-header-toolbar.fc-toolbar {
+  justify-content: center;
+  column-gap: 30px;
+}
+
+.fullcalendar.small-calendar.fc .fc-daygrid-day-top {
+  justify-content: center;
+}
+
+.fullcalendar.small-calendar.fc .fc-h-event .fc-event-main {
+  font-size: 12px;
+  font-weight: 500;
+}

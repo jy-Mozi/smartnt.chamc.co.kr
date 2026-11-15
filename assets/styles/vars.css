@@ -1,0 +1,44 @@
+:root {
+  /* color */
+  --color-primary-text: #21a6bf;
+  --color-primary-main: #7fcfde;
+  --color-primary-background: #f4ffff;
+
+  --color-white: #ffffff;
+
+  --color-gray-01: #111111;
+  --color-gray-02: #666666;
+  --color-gray-03: #cccccc;
+  --color-gray-04: #e9e9e9;
+
+  --color-bg-def: #f3f4f5;
+
+  --color-table-bg: #fafafa;
+
+  --color-sub-01: #9a5bff;
+  --color-sub-02: #0b54ff;
+  --color-sub-03: #b8cdff;
+
+  --color-orange: #ff9700;
+  --color-red: #fe4e4e;
+  --color-green: #21cb28;
+  --color-brown: #d57a50;
+
+  /* alpha */
+  --alpha-black-00: rgba(0 0 0 0);
+  --alpha-black-01: rgba(0, 0, 0, 0.1);
+  --alpha-black-02: rgba(0, 0, 0, 0.2);
+  --alpha-black-03: rgba(0, 0, 0, 0.3);
+  --alpha-black-04: rgba(0, 0, 0, 0.4);
+  --alpha-black-05: rgba(0, 0, 0, 0.5);
+  --alpha-black-06: rgba(0, 0, 0, 0.6);
+  --alpha-black-07: rgba(0, 0, 0, 0.7);
+  --alpha-black-08: rgba(0, 0, 0, 0.8);
+  --alpha-black-09: rgba(0, 0, 0, 0.9);
+
+  /* box shadow */
+  --box-shadow: 0 5px 10px 0 var(--alpha-black-01);
+
+  /* form */
+  --input-height: 40px;
+}

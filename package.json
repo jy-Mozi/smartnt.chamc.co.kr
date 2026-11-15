@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "live-server --port=5500",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "live-server": "git+https://github.com/tapio/live-server.git#ad22544"
+  }
+}

@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CHA Biotech BECARE 건진센터 통합관리자" />
+    <meta name="keywords" content="CHA, Biotech, 차바이오텍, BECARE, 건진센터, 통합관리자" />
+    <title>BECARE 통합관리자</title>
+
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="/assets/styles/index.css" type="text/css" />
+
+    <!-- JavaScript -->
+    <script defer src="/assets/js/index.js" type="module"></script>
+
+    <style>
+      body {
+        padding: 40px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .docs-section {
+        margin-top: 40px;
+
+        .docs-section-title {
+          font-size: 24px;
+          padding-bottom: 4px;
+          border-bottom: 1px solid lightgray;
+        }
+
+        .docs-item {
+          margin-top: 20px;
+
+          .docs-item-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+
+          details:not(:last-of-type) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Components</h1>
+    <section class="docs-section">
+      <h2 class="docs-section-title">Form Components</h2>
+      <ul class="docs-list">
+        <li class="docs-item">
+          <h3 class="docs-item-title">input</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="input">
+              <input type="text" placeholder="input" />
+            </div>
+          </details>
+          <details open>
+            <summary>search</summary>
+            <div class="input search">
+              <input type="search" placeholder="search input" />
+              <i class="bx bx-search"></i>
+            </div>
+          </details>
+          <details open>
+            <summary>phone</summary>
+            <div class="phone-input">
+              <div class="select">
+                <select>
+                  <option value="010">010</option>
+                </select>
+              </div>
+              -
+              <div class="input">
+                <input type="text" name="phone" />
+              </div>
+              -
+              <div class="input">
+                <input type="text" name="phone" />
+              </div>
+            </div>
+          </details>
+          <details open>
+            <summary>zipcode</summary>
+            <div class="input zipcode">
+              <input type="text" name="zip-code" placeholder="우편번호 입력" />
+              <button class="search-zipcode">주소검색</button>
+            </div>
+          </details>
+          <details open>
+            <summary>address</summary>
+            <div class="address-input">
+              <div class="input">
+                <input type="text" name="zip-code" placeholder="우편번호 입력" />
+              </div>
+              <div class="input">
+                <input type="text" name="address" placeholder="주소 입력" />
+              </div>
+            </div>
+          </details>
+          <details open>
+            <summary>unit</summary>
+            <div class="unit-input">
+              <div class="input">
+                <input type="number" name="time-limit" />
+              </div>
+              일
+            </div>
+          </details>
+          <details open>
+            <summary>file</summary>
+            <div class="file-input">
+              <div class="input">
+                <input id="file" type="file" name="logo-image" />
+                <label for="file" class="file-info">
+                  <span class="file-name">등록된 파일이 없습니다.</span>
+                  <small class="file-select">파일 선택</small>
+                </label>
+              </div>
+              <label for="file" class="button outline def">업로드<i class="bx bx-upload"></i></label>
+            </div>
+          </details>
+          <details open>
+            <summary>file selected</summary>
+            <div class="file-input">
+              <div class="input">
+                <input id="file2" type="file" name="logo-image" />
+                <button class="file-info">
+                  <span class="file-name"><i class="bx bx-file-blank mr-5"></i>apple.png</span>
+                  <small class="file-select"><i class="bx bx-x"></i>Remove</small>
+                </button>
+              </div>
+              <label for="file2" class="button outline def">업로드<i class="bx bx-upload"></i></label>
+            </div>
+          </details>
+          <details open>
+            <summary>date picker</summary>
+            <div class="date-picker">
+              <div class="input date">
+                <input type="text" placeholder="YYYY-MM-DD" readonly />
+                <i class="bx bx-calendar"></i>
+              </div>
+            </div>
+          </details>
+          <details open>
+            <summary>time picker</summary>
+            <div class="time-picker">
+              <div class="picker-select">
+                <select class="hour-picker">
+                  <option disabled hidden selected>HH</option>
+                </select>
+                :
+                <select class="minute-picker">
+                  <option disabled hidden selected>mm</option>
+                </select>
+              </div>
+              <i class="bx bx-time"></i>
+            </div>
+          </details>
+          <details open>
+            <summary>date time picker</summary>
+            <div class="date-time-picker">
+              <div class="date-picker">
+                <div class="input date">
+                  <input type="text" placeholder="YYYY-MM-DD" readonly />
+                  <i class="bx bx-calendar"></i>
+                </div>
+              </div>
+              <div class="time-picker">
+                <div class="picker-select">
+                  <select class="hour-picker">
+                    <option disabled hidden selected>HH</option>
+                  </select>
+                  :
+                  <select class="minute-picker">
+                    <option disabled hidden selected>mm</option>
+                  </select>
+                </div>
+                <i class="bx bx-time"></i>
+              </div>
+            </div>
+          </details>
+          <details open>
+            <summary>range picker</summary>
+            <div class="range-picker">
+              <div class="input date">
+                <input type="text" placeholder="YYYY-MM-DD" readonly />
+                <i class="bx bx-calendar"></i>
+              </div>
+              <div class="input date">
+                <input type="text" placeholder="YYYY-MM-DD" readonly />
+                <i class="bx bx-calendar"></i>
+              </div>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">textarea</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="textarea">
+              <textarea placeholder="textarea"></textarea>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">label</h3>
+          <details open>
+            <summary>default</summary>
+            <label class="label">LABEL</label>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">radio</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="radio-group">
+              <div class="radio">
+                <input type="radio" id="radio1" name="radio-group" checked />
+                <label for="radio1">RADIO 1</label>
+              </div>
+              <div class="radio">
+                <input type="radio" id="radio2" name="radio-group" />
+                <label for="radio2">RADIO 2</label>
+              </div>
+              <div class="radio">
+                <input type="radio" id="radio3" name="radio-group" />
+                <label for="radio3">RADIO 3</label>
+              </div>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">checkbox</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="checkbox">
+              <input id="checkbox" type="checkbox" />
+              <label for="checkbox">
+                <span class="checkbox-ui">
+                  <i class="bx bx-check"></i>
+                </span>
+              </label>
+            </div>
+          </details>
+          <details open>
+            <summary>checked</summary>
+            <div class="checkbox">
+              <input id="checked-checkbox" type="checkbox" checked />
+              <label for="checked-checkbox">
+                <span class="checkbox-ui">
+                  <i class="bx bx-check"></i>
+                </span>
+              </label>
+            </div>
+          </details>
+          <details open>
+            <summary>has label</summary>
+            <div class="checkbox">
+              <input id="label-checkbox" type="checkbox" />
+              <label for="label-checkbox">
+                <span class="checkbox-ui">
+                  <i class="bx bx-check"></i>
+                </span>
+                <span class="label-text"> 2024-07 </span>
+              </label>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">button</h3>
+          <details open>
+            <summary>primary</summary>
+            <button class="button">BUTTON</button>
+          </details>
+          <details open>
+            <summary>outline</summary>
+            <button class="button outline">BUTTON</button>
+          </details>
+          <details open>
+            <summary>def</summary>
+            <button class="button def">BUTTON</button>
+          </details>
+          <details open>
+            <summary>text</summary>
+            <button class="button text">BUTTON</button>
+          </details>
+          <details open>
+            <summary>gray</summary>
+            <button class="button gray">BUTTON</button>
+          </details>
+          <details open>
+            <summary>dark</summary>
+            <button class="button dark">BUTTON</button>
+          </details>
+          <details open>
+            <summary>red</summary>
+            <button class="button red">BUTTON</button>
+          </details>
+          <details open>
+            <summary>sub</summary>
+            <button class="button sub">BUTTON</button>
+          </details>
+          <details open>
+            <summary>orange</summary>
+            <button class="button orange">BUTTON</button>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">select</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="select">
+              <select>
+                <option disabled hidden selected>SELECT</option>
+                <option value="option1">option1</option>
+                <option value="option2">option2</option>
+                <option value="option3">option3</option>
+              </select>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">input select</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="input-select">
+              <div class="input">
+                <input type="text" placeholder="INPUT" />
+              </div>
+              <i class="bar">|</i>
+              <div class="select">
+                <select>
+                  <option value="SELECT">SELECT</option>
+                </select>
+              </div>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">editor</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="editor-container">
+              <div class="editor"></div>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">form control</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="form-control">
+              <div class="left-box">
+                <div class="select">
+                  <select>
+                    <option disabled hidden selected>SELECT</option>
+                    <option value="option1">option1</option>
+                    <option value="option2">option2</option>
+                    <option value="option3">option3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="right-box">
+                <a href="" class="button outline def">Button</a>
+                <button class="button">Button</button>
+              </div>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </section>
+    <section class="docs-section">
+      <h2 class="docs-section-title">UI Components</h2>
+      <ul class="docs-list">
+        <li class="docs-item">
+          <h3 class="docs-item-title">divider</h3>
+          <details open>
+            <summary>default</summary>
+            <hr class="divider" />
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">badge</h3>
+          <details open>
+            <summary>def</summary>
+            <small class="badge def">badge</small>
+          </details>
+          <details open>
+            <summary>orange</summary>
+            <small class="badge orange">badge</small>
+          </details>
+          <details open>
+            <summary>red</summary>
+            <small class="badge red">badge</small>
+          </details>
+          <details open>
+            <summary>blue</summary>
+            <small class="badge blue">badge</small>
+          </details>
+          <details open>
+            <summary>green</summary>
+            <small class="badge green">badge</small>
+          </details>
+          <details open>
+            <summary>purple</summary>
+            <small class="badge purple">badge</small>
+          </details>
+          <details open>
+            <summary>black</summary>
+            <small class="badge black">badge</small>
+          </details>
+          <details open>
+            <summary>gray</summary>
+            <small class="badge gray">badge</small>
+          </details>
+          <details open>
+            <summary>light gray</summary>
+            <small class="badge light-gray">badge</small>
+          </details>
+          <details open>
+            <summary>outline def</summary>
+            <small class="badge def outline">badge</small>
+          </details>
+          <details open>
+            <summary>outline orange</summary>
+            <small class="badge orange outline">badge</small>
+          </details>
+          <details open>
+            <summary>outline red</summary>
+            <small class="badge red outline">badge</small>
+          </details>
+          <details open>
+            <summary>outline blue</summary>
+            <small class="badge blue outline">badge</small>
+          </details>
+          <details open>
+            <summary>outline green</summary>
+            <small class="badge green outline">badge</small>
+          </details>
+          <details open>
+            <summary>outline purple</summary>
+            <small class="badge purple outline">badge</small>
+          </details>
+          <details open>
+            <summary>outline black</summary>
+            <small class="badge black outline">badge</small>
+          </details>
+          <details open>
+            <summary>outline gray</summary>
+            <small class="badge gray outline">badge</small>
+          </details>
+          <details open>
+            <summary>outline light gray</summary>
+            <small class="badge outline light-gray">badge</small>
+          </details>
+          <details open>
+            <summary>large def</summary>
+            <small class="badge def large">badge</small>
+          </details>
+          <details open>
+            <summary>large orange</summary>
+            <small class="badge orange large">badge</small>
+          </details>
+          <details open>
+            <summary>large red</summary>
+            <small class="badge red large">badge</small>
+          </details>
+          <details open>
+            <summary>large blue</summary>
+            <small class="badge blue large">badge</small>
+          </details>
+          <details open>
+            <summary>large green</summary>
+            <small class="badge green large">badge</small>
+          </details>
+          <details open>
+            <summary>large purple</summary>
+            <small class="badge purple large">badge</small>
+          </details>
+          <details open>
+            <summary>large black</summary>
+            <small class="badge black large">badge</small>
+          </details>
+          <details open>
+            <summary>large gray</summary>
+            <small class="badge gray large">badge</small>
+          </details>
+          <details open>
+            <summary>large light gray</summary>
+            <small class="badge light-gray large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline def</summary>
+            <small class="badge def outline large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline orange</summary>
+            <small class="badge orange outline large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline red</summary>
+            <small class="badge red outline large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline blue</summary>
+            <small class="badge blue outline large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline green</summary>
+            <small class="badge green outline large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline purple</summary>
+            <small class="badge purple outline large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline black</summary>
+            <small class="badge black outline large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline gray</summary>
+            <small class="badge gray outline large">badge</small>
+          </details>
+          <details open>
+            <summary>large outline light gray</summary>
+            <small class="badge light-gray outline large">badge</small>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">card</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="card">
+              <div class="card-title">Card Title</div>
+              <div class="card-content">Card Content</div>
+              <div class="card-footer right">
+                <button class="button outline w-auto">Button</button>
+              </div>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">tab</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="tab">
+              <nav class="tab-nav">
+                <ul class="tab-list">
+                  <li class="tab-item">
+                    <button data-id="tab1" class="tab-button current">TAB 1</button>
+                  </li>
+                  <li class="tab-item">
+                    <button data-id="tab2" class="tab-button">TAB 2</button>
+                  </li>
+                </ul>
+              </nav>
+              <div data-id="tab1" class="tab-content current">TAB 1 CONTENT</div>
+              <div data-id="tab2" class="tab-content">TAB 2 CONTENT</div>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">progress</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="progress">
+              <label class="progress-label">70%</label>
+              <progress class="progress-bar" max="100" value="70"></progress>
+            </div>
+          </details>
+          <details open>
+            <summary>sub</summary>
+            <div class="progress sub">
+              <label class="progress-label">50%</label>
+              <progress class="progress-bar" max="100" value="50"></progress>
+            </div>
+          </details>
+          <details open>
+            <summary>orange</summary>
+            <div class="progress orange">
+              <label class="progress-label">80%</label>
+              <progress class="progress-bar" max="100" value="80"></progress>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">modal</h3>
+          <details open>
+            <summary>small</summary>
+            <button class="button modal-button" data-id="small-modal" data-type="open">Open Modal</button>
+            <div class="modal small" data-id="small-modal">
+              <div class="scroll-area">
+                <div class="modal-container">
+                  <div class="modal-header">
+                    <div class="modal-title">Modal Title</div>
+                    <button class="modal-button" data-id="small-modal" data-type="close">
+                      <i class="bx bx-x"></i>
+                    </button>
+                  </div>
+                  <div class="modal-main">
+                    <div class="modal-content">Modal Content</div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="button">Button</button>
+                    <button class="button outline">Button</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details open>
+            <summary>medium</summary>
+            <button class="button modal-button" data-id="medium-modal" data-type="open">Open Modal</button>
+            <div class="modal medium" data-id="medium-modal">
+              <div class="scroll-area">
+                <div class="modal-container">
+                  <div class="modal-header">
+                    <div class="modal-title">Modal Title</div>
+                    <button class="modal-button" data-id="medium-modal" data-type="close">
+                      <i class="bx bx-x"></i>
+                    </button>
+                  </div>
+                  <div class="modal-main">
+                    <div class="modal-content">Modal Content</div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="button">Button</button>
+                    <button class="button outline">Button</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details open>
+            <summary>large</summary>
+            <button class="button modal-button" data-id="large-modal" data-type="open">Open Modal</button>
+            <div class="modal large" data-id="large-modal">
+              <div class="scroll-area">
+                <div class="modal-container">
+                  <div class="modal-header">
+                    <div class="modal-title">Modal Title</div>
+                    <button class="modal-button" data-id="large-modal" data-type="close">
+                      <i class="bx bx-x"></i>
+                    </button>
+                  </div>
+                  <div class="modal-main">
+                    <div class="modal-content">Modal Content</div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="button">Button</button>
+                    <button class="button outline">Button</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </section>
+    <section class="docs-section">
+      <h2 class="docs-section-title">Layout Components</h2>
+      <ul class="docs-list">
+        <li class="docs-item">
+          <h3 class="docs-item-title">top bar</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="top-bar">
+              <div class="input search">
+                <input type="search" placeholder="수검자명을 입력하세요." />
+                <i class="bx bx-search"></i>
+              </div>
+              <nav class="top-nav">
+                <div class="button-group">
+                  <button class="button">수기데이터변경</button>
+                  <button class="button">검사항목코딩</button>
+                  <button class="button">병원별 코딩 현황</button>
+                </div>
+                <div class="info-group">
+                  <div id="setting" class="setting">
+                    <button class="button setting-toggle">hjbong@chamc.co.kr<i class="bx bx-chevron-down"></i></button>
+                    <ul class="setting-list">
+                      <li class="setting-item"><button type="button" class="button">비밀번호 변경</button></li>
+                    </ul>
+                  </div>
+                  <a href="" class="button">로그아웃<i class="bx bx-log-in"></i></a>
+                </div>
+              </nav>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">breadcrumb</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="breadcrumb">
+              <a href=""><i class="bx bx-home-alt-2"></i></a>
+              <i class="bx bx-chevron-right"></i>
+              <a href="">2depth</a>
+              <i class="bx bx-chevron-right"></i>
+              <a class="current" href="">3depth</a>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">section</h3>
+          <details open>
+            <summary>default</summary>
+            <section class="section">
+              <div class="section-container">
+                <div class="section-title">
+                  <h2>Section Title</h2>
+                </div>
+                <div class="section-content">Section Content</div>
+              </div>
+            </section>
+          </details>
+          <details open>
+            <summary>has sub title</summary>
+            <section class="section">
+              <div class="section-container">
+                <div class="section-title">
+                  <h2>
+                    Section Title
+                    <i class="bar">|</i>
+                    <span class="sub-title">Sub Title</span>
+                  </h2>
+                </div>
+                <div class="section-content">Section Content</div>
+              </div>
+            </section>
+          </details>
+        </li>
+      </ul>
+    </section>
+    <section class="docs-section">
+      <h2 class="docs-section-title">Table Components</h2>
+      <ul class="docs-list">
+        <li class="docs-item">
+          <h3 class="docs-item-title">table search</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="table-search">
+              <form class="form">
+                <div class="select">
+                  <select name="filter">
+                    <option value="option1" selected>option1</option>
+                    <option value="option2" selected>option2</option>
+                    <option value="option3" selected>option3</option>
+                  </select>
+                </div>
+                <div class="input">
+                  <input type="search" name="keyword" placeholder="검색어를 입력하세요." />
+                </div>
+                <button type="submit" class="button">검색</button>
+                <button type="reset" class="button outline"><i class="bx bx-reset"></i>초기화</button>
+              </form>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">table</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="table">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="fit-cell">번호</th>
+                    <th>이름</th>
+                    <th>휴대전화</th>
+                    <th>이메일</th>
+                    <th class="fit-cell">비고</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fit-cell">77</td>
+                    <td class="text-left">홍길동</td>
+                    <td>010-1234-5678</td>
+                    <td>becare@cha.com</td>
+                    <td class="fit-cell">
+                      <div class="flex-cell">
+                        <button class="button def">변경<i class="bx bx-chevron-right"></i></button>
+                        <button class="button def">삭제<i class="bx bx-chevron-right"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="active">
+                    <td class="fit-cell">77</td>
+                    <td class="text-left">홍길동</td>
+                    <td>010-1234-5678</td>
+                    <td>becare@cha.com</td>
+                    <td class="fit-cell">
+                      <div class="flex-cell">
+                        <button class="button def">변경<i class="bx bx-chevron-right"></i></button>
+                        <button class="button def">삭제<i class="bx bx-chevron-right"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">table footer</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="table">
+              <table class="border-foot">
+                <thead>
+                  <tr>
+                    <th rowspan="2" class="border-right">병원명</th>
+                    <th colspan="4" class="border-right">검진완료</th>
+                    <th rowspan="2" class="fit-cell">비고</th>
+                  </tr>
+                  <tr>
+                    <th>검진완료(건)</th>
+                    <th>회사지원(금액)</th>
+                    <th>수수료(금액)</th>
+                    <th class="border-right">병원청구(금액)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-right text-left">건국대학교병원</td>
+                    <td>19 건</td>
+                    <td>47,840,000 원</td>
+                    <td>47,840,000 원</td>
+                    <td class="border-right">47,840,000 원</td>
+                    <td class="fit-cell">
+                      <button class="button def">내역<i class="bx bx-chevron-right"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot class="border">
+                  <tr>
+                    <td class="border-right text-left font-bold">합계</td>
+                    <td class="font-bold">19 건</td>
+                    <td class="font-bold">47,840,000 원</td>
+                    <td class="font-bold">47,840,000 원</td>
+                    <td class="border-right font-bold">47,840,000 원</td>
+                    <td class="fit-cell"></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </details>
+        </li>
+        <li class="docs-item">
+          <h3 class="docs-item-title">table control</h3>
+          <details open>
+            <summary>default</summary>
+            <div class="table-control">
+              <div class="left-box">
+                <div class="pagination">
+                  <ul class="pagination-list">
+                    <li class="pagination-item">
+                      <button class="control-button prev">
+                        <i class="bx bx-chevron-left"></i>
+                      </button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button current">1</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">2</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">3</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">4</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">5</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">6</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">7</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">8</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">9</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="page-button">10</button>
+                    </li>
+                    <li class="pagination-item">
+                      <button class="control-button next">
+                        <i class="bx bx-chevron-right"></i>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="right-box">
+                <a href="" class="button">등록하기</a>
+              </div>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

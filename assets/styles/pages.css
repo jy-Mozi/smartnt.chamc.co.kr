@@ -1,0 +1,54 @@
+/* login page */
+#root[data-page='login'] {
+  #main {
+    background: url('../images/login/page_bg.png') no-repeat center/cover;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .login-section {
+    min-height: 100%;
+    height: max-content;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .section-container {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 20px;
+      padding: 40px 30px;
+      background: #fff;
+    }
+
+    .section-title {
+      text-align: center;
+
+      .logo-image {
+        max-width: 300px;
+      }
+
+      .description {
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--color-gray-02);
+      }
+    }
+
+    .section-content {
+      margin-top: 20px;
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px 0;
+
+        .input-group .input:not(:first-of-type) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
