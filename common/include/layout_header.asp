@@ -21,7 +21,6 @@
 
 <!-- JavaScript -->
 <script defer src="/assets/js/index.js" type="module"></script>
-<script src="/assets/js/jquery-1.7.2.min.js"></script>
 
 <!-- SweetAlert -->
 <script src="/js/sweetalert2.min.js"></script>
