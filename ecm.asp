@@ -1,4 +1,12 @@
-<!--#include virtual="/common/library/secret_config.asp"--><%
+<%
+'==============================
+' 2026-11-17 접근 차단
+' 로그인 체크 없이 그룹웨어 직원 목록을 엑셀로 내려받을 수 있어 막음.
+' 다시 사용하려면 아래 3줄을 지우고 인증 체크를 추가할 것.
+'==============================
+Response.Status = "404 Not Found"
+Response.End
+%><!--#include virtual="/common/library/secret_config.asp"--><%
 Response.Buffer = True
 Response.ContentType = "application/vnd.ms-excel"
 Response.AddHeader "Content-Disposition", "attachment;filename=ECM_"&left(Now(),7)&".xls"
