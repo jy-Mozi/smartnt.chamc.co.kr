@@ -8,6 +8,7 @@
 Option Explicit 
 %>
 <!-- #include virtual = "/common/library/common.asp"-->
+<!-- #include virtual = "/common/include/approve_box.asp"-->
 <!doctype html>
 <html lang="ko">
   <head>
@@ -101,35 +102,7 @@ Option Explicit
 	printerYn = "Y"
 
 	
-	Dim AP_CHA_MANAGER_NM , AP_CHA_STAFF_NM , AP_HD_MANAGER_NM , AP_HD_STAFF_NM
-	Dim AP_CHA_MANAGER_ID , AP_CHA_STAFF_ID , AP_HD_MANAGER_ID , AP_HD_STAFF_ID
-	sql = "EXEC ADM_APPROVE_DETAIL_VIEW '{P1}','{P2}','{P3}','{P4}';"
-	sql = Replace(sql , "{P1}" , selDate , vbTextCompare)
-	sql = Replace(sql , "{P2}" , "CART"    , vbTextCompare)
-	sql = Replace(sql , "{P3}" , selHoType    , vbTextCompare)
-	sql = Replace(sql , "{P4}" , "" , vbTextCompare)
-
-	Set rs = getQueryDB(sql)
-	If Not(rs.Eof Or rs.Bof) Then 
-		AP_CHA_MANAGER_NM	= nullFillWith(rs("CHA_MANAGER_NAME"),"",False)
-		AP_CHA_STAFF_NM		= nullFillWith(rs("CHA_STAFF_NAME"),"",False)
-		AP_HD_MANAGER_NM	= nullFillWith(rs("HD_MANAGER_NAME"),"",False)
-		AP_HD_STAFF_NM		= nullFillWith(rs("HD_STAFF_NAME"),"",False)
-		AP_CHA_MANAGER_ID	= nullFillWith(rs("CHA_MANAGER"),"",False)
-		AP_CHA_STAFF_ID		= nullFillWith(rs("CHA_STAFF"),"",False)
-		AP_HD_MANAGER_ID	= nullFillWith(rs("HD_MANAGER"),"",False)
-		AP_HD_STAFF_ID		= nullFillWith(rs("HD_STAFF"),"",False)
-	Else 
-		AP_CHA_MANAGER_NM	= ""
-		AP_CHA_STAFF_NM		= ""
-		AP_HD_MANAGER_NM	= ""
-		AP_HD_STAFF_NM		= ""
-		AP_CHA_MANAGER_ID	= ""
-		AP_CHA_STAFF_ID		= ""
-		AP_HD_MANAGER_ID	= ""
-		AP_HD_STAFF_ID		= ""
-	End If 
-	rsClose(rs)
+	Call loadApproveInfo(selDate, "CART", selHoType)
 
  %>
   </head>
@@ -154,77 +127,7 @@ Option Explicit
 				<% End If %>
 			</div>
 			<div class="table">
-				<table>
-					<tbody>
-						<tr>
-							<td rowspan="3">결재</td>
-							<td colspan="2">현대그린푸드</td>
-							<td colspan="2">본원</td>
-						</tr>	
-						<tr>
-							<td>담당</td>
-							<td>점장</td>
-							<td>담당</td>
-							<td>팀장</td>
-						</tr>
-						<tr>
-							<td style="height:30px;">
-							<%
-							If AP_HD_STAFF_NM = "" And vAdminCompany = "HD" And vAdminPosition = "STAFF" Then 
-								%><small class="badge green noprint" onClick="javascript:btnApprove('1');void(0);" style="cursor:pointer;">승인</small><%
-							End If 
-
-							If AP_HD_STAFF_NM <> "" Then 
-								rw(AP_HD_STAFF_NM)
-								If Session("SNT_ADMIN_ID") = AP_HD_STAFF_ID Then 
-									rw("<BR/><small class=""badge red noprint"" onClick=""javascript:btnApproveCancel('1');void(0);"" style=""cursor:pointer;"">취소</small>")
-								End If 
-							End If 
-							%>
-							</td>
-							<td>
-							<%
-							If AP_HD_MANAGER_NM = "" And vAdminCompany = "HD" And vAdminPosition = "MANAGER" Then 
-								%><small class="badge orange noprint" onClick="javascript:btnApprove('2');void(0);" style="cursor:pointer;">승인</small><%
-							End If 
-
-							If AP_HD_MANAGER_NM <> "" Then 
-								rw(AP_HD_MANAGER_NM)
-								If Session("SNT_ADMIN_ID") = AP_HD_MANAGER_ID Then 
-									rw("<BR/><small class=""badge red noprint"" onClick=""javascript:btnApproveCancel('2');void(0);"" style=""cursor:pointer;"">취소</small>")
-								End If
-							End If 
-							%>
-							</td>
-							<td>
-							<%
-							If AP_CHA_STAFF_NM = "" And vAdminCompany = "CHA" And vAdminPosition = "STAFF"Then 
-								%><small class="badge orange noprint" onClick="javascript:btnApprove('3');void(0);" style="cursor:pointer;">승인</small><%
-							End If 
-							If AP_CHA_STAFF_NM <> "" Then 
-								rw(AP_CHA_STAFF_NM)
-								If Session("SNT_ADMIN_ID") = AP_CHA_STAFF_ID Then 
-									rw("<BR/><small class=""badge red noprint"" onClick=""javascript:btnApproveCancel('3');void(0);"" style=""cursor:pointer;"">취소</small>")
-								End If
-							End If 
-							%>
-							</td>
-							<td>
-							<%
-							If AP_CHA_MANAGER_NM = "" And vAdminCompany = "CHA" And vAdminPosition = "MANAGER" Then 
-							%><small class="badge orange noprint" onClick="javascript:btnApprove('4');void(0);"" style="cursor:pointer;">승인</small><% 
-							End If 
-							If AP_CHA_MANAGER_NM <> "" Then 
-								rw(AP_CHA_MANAGER_NM)
-								If Session("SNT_ADMIN_ID") = AP_CHA_MANAGER_ID Then 
-									rw("<BR/><small class=""badge red noprint"" onClick=""javascript:btnApproveCancel('4');void(0);"" style=""cursor:pointer;"">취소</small>")
-								End If
-							End If 
-							%>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<% Call drawApproveBox() %>
 			</div>
 			<div>
 
