@@ -1,13 +1,16 @@
 ﻿<%
 '========================================
-' 로그인 체크 
+' 로그인 체크
+' - /pages/login/ 을 제외한 모든 페이지는 로그인 세션(SNT_ADMIN_ID)이 있어야 접근 가능
+' - 2026-11-18 복구: 기존 코드는 다른 프로젝트의 세션 키(FMS_ADMIN_ID)를 검사해
+'   항상 로그인 화면으로 튕겨서 주석 처리돼 있었음 → 로그인 시 저장하는 SNT_ADMIN_ID 로 수정
 '========================================
-If InStr(Request.ServerVariables("SCRIPT_NAME") , "/pages/login/") = 0  Then 
-'	If Session("FMS_ADMIN_ID") = "" Then 
-'		Call errorParentMove("세션이종료되어 로그인 페이지로 이동합니다!","/pages/login/")
-'		Response.End 
-'	End If 
-End If 
+If InStr(1, Request.ServerVariables("SCRIPT_NAME") , "/pages/login/", vbTextCompare) = 0  Then
+	If Session("SNT_ADMIN_ID") = "" Then
+		Call errorParentMove("세션이종료되어 로그인 페이지로 이동합니다!","/pages/login/")
+		Response.End
+	End If
+End If
 
 Sub isCurrentChk(dbForder , curForder )
 	'Response.write dbForder & "=" & curForder & "<br/>"
